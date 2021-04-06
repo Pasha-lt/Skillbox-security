@@ -10,4 +10,3 @@
 
 first_quarter, second_quarter, third_quarter, fourth_quarter = map(int, input('Введите 4 значения через пробел: ').split())
 print((first_quarter+second_quarter)/(third_quarter+fourth_quarter))
-

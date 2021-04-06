@@ -6,4 +6,4 @@
 # Результат:
 
 number = int(input('Введите число: '))
-print(f'После числа {number} идёт число {number + 1}\nДо числа {number} идёт число {number -1}')
+print(f'После числа {number} идёт число {number + 1}\nДо числа {number} идёт число {number - 1}')
