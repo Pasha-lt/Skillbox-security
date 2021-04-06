@@ -6,6 +6,8 @@ def reverse_number(number):
     second_number = number // 100 % 10
     third_number = number // 10 % 10
     fourth_number = number % 10
+    reverse_number = fourth_number*1000+third_number*100+second_number*10+first_number
+    print(reverse_number)
     return f'{fourth_number}{third_number}{second_number}{first_number}'
 
 
