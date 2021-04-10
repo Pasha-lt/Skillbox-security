@@ -12,7 +12,6 @@ def foo(number):
     else:
         return 'не оk'
 
-
 # number = int(input('Введите число: '))
 assert foo(-1) == 'не оk'
 assert foo(100) == 'не оk'
