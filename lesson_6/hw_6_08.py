@@ -6,6 +6,9 @@
 all_money = int(input('Введите количество денег которые вы ложите в банк: '))
 year_percent = float(input('Введите годовой процент банка: '))
 desired_money = int(input('Введите сумму которую вы бы хотели получить: '))
-
+year = 0
 while all_money < desired_money:
-    pass
+    all_money += int(all_money / 100 * year_percent)
+    year += 1
+
+print(year)
