@@ -4,13 +4,9 @@
 # Напишите программу, которая находит максимум из трёх чисел, не используя дополнительные переменные.
 
 number_a, number_b, number_c = map(int, input('Введите через пробел три числа: ').split())
-if number_a > number_b:
-    if number_a > number_c:
-        print(number_a)
-    else:
-        print(number_c)
+if number_a > number_b and number_a > number_c:
+    print(number_a)
+elif number_b > number_c and number_b > number_a:
+    print(number_b)
 else:
-    if number_b > number_c:
-        print(number_b)
-    else:
-        print(number_c)
+    print(number_c)
