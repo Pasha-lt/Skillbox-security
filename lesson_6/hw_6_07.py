@@ -38,12 +38,15 @@ print('Начался 8-часовой рабочий день')
 time_hour = 0
 task_counter = 0
 go_to_chop = False
+ask = ''
 while time_hour < 8:
     new_task = int(input('Сколько задач решит Максим? '))
     task_counter += new_task
-    go_to_chop = bool(int(input('Звонит жена. Взять трубку? ')))
+    ask = input('Звонит жена. Взять трубку? ')
+    if ask == '1':
+        go_to_chop = True
     time_hour += 1
 
 print(f'Рабочий день закончился. Всего выполнено задач: {task_counter}')
-if go_to_chop == True:
+if go_to_chop:
     print('Нужно зайти в магазин')
