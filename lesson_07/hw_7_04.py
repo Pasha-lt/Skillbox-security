@@ -22,10 +22,10 @@
 # Количество нарушений: 2
 
 violations = 0
-for sector in range(30,36):
+for sector in range(30, 36):
     people = int(input(f'Людей в {sector} секторе: '))
     if people > 10:
-        violations +=1
+        violations += 1
         print('Нарушение! Слишком много людей в секторе!')
     else:
         print('Всё спокойно.')
