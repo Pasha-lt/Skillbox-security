@@ -10,7 +10,6 @@ number_b = int(input('Введите число б: '))
 
 for number in range(number_a, number_b + 1):
     if not number % 3:
-        print(number)
         sum_grade += number
         counter_grade += 1
 
