@@ -10,7 +10,7 @@ number_counter = 0
 number_sum = 0
 
 for number in range(a, b):
-    if not number %3:
+    if not number % 3:
         number_sum += number
         number_counter += 1
 
