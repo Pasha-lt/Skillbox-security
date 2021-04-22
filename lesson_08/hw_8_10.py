@@ -21,3 +21,24 @@
 # Введите кол-во мальчиков: 100
 # Введите кол-во девочек: 1
 # Ответ: Нет решения
+
+counter_boys = int(input('Введите количество мальчиков: '))
+counter_girls = int(input('Введите количество мальчиков: '))
+our_output = ''
+
+if counter_boys > 2 * counter_girls or counter_girls > 2 * counter_boys:
+    print('Нет Решения')
+elif counter_boys >= counter_girls:
+    mult_string = counter_boys - counter_girls
+    for _ in range(mult_string):
+        our_output += 'BGB'
+    for _ in range(counter_girls - mult_string):
+        our_output += 'BG'
+else:
+    mult_string = counter_girls - counter_boys
+    for _ in range(mult_string):
+        our_output += 'GBG'
+    for _ in range(counter_boys - mult_string):
+        our_output += 'GB'
+
+print(our_output)
