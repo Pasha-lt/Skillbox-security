@@ -8,3 +8,5 @@ counter = 1
 for number in range(1, n + 1):
     counter += (-1) ** number * (1 / (2 ** number))
     print(counter)
+
+

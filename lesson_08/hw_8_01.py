@@ -7,5 +7,5 @@
 # два и так далее, пока она не закончится. Используйте цикл for.
 
 all_buckwheat = 100
-for month in range(400,0, -4):
-    print(f'Cейчас по счету {abs(int(month/4-100))} месяц вашего прибывания. У вас осталось {month} килограм гречки')
+for leftover_buckwheat in range(100,-1, -1):
+    print(f'Cейчас по счету {leftover_buckwheat} месяц вашего прибывания. У вас осталось {leftover_buckwheat*4} килограм гречки')

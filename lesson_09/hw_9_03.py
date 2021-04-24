@@ -19,9 +19,8 @@ users_string = input('Введите сообщение: ')
 counter = 0
 for symbol in users_string:
     counter += 1
-    print(symbol)
     if symbol == '*':
-        print(f'Символ ‘*’ стоит на позиции {counter}')
+        print(f'Символ "*" стоит на позиции {counter}')
         break
 else:
     print('В сообщении нету знака "*"')

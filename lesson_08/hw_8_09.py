@@ -3,11 +3,9 @@
 # (x-1)/(x-2) * (x-3)/(x-4) * .... * (x-63)/(x-64)
 
 x = int(input("Введите x: "))
-s1 = 1
-s2 = 1
+final_score = 1
 
 for number in range(1, 65, 2):
-    s1 *= x - number
-    s2 *= x - number + 1
+    final_score *= (x - number) / (x - number + 1)
 
-print(s1 / s2)
+print(final_score)
