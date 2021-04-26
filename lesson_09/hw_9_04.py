@@ -22,3 +22,6 @@ print('Задача 4. Театр')
 row = int(input('Введите кол-во рядов: '))
 seats_in_a_row = int(input('Введите кол-во сидений в ряду: '))
 space_between_rows = int(input('Введите кол-во метров между рядами: '))
+
+for _ in range(row):
+    print(f'{"=" * seats_in_a_row} {"*" * space_between_rows} {"=" * seats_in_a_row}')
