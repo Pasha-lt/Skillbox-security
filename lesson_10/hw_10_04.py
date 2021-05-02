@@ -16,9 +16,13 @@ print('Задача 4. Крест')
 #  ^      ^
 # ^        ^
 
-# basic_a = 8
-# for a in range(basic_a):
-#     for b in range(basic_a):
-#         print(f'{" "* (b-a)}^{" "* (b-a)}^{" "* (b-a)}')
-#     print()
-
+basic_a = 12
+for a in range(1, basic_a + 1):
+    for b in range(1, basic_a + 1):
+        if b == a:
+            print('^', end='')
+        elif a == basic_a + 1 - b:
+            print('^', end='')
+        else:
+            print(' ', end='')
+    print()
