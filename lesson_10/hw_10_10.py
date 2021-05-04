@@ -1,6 +1,5 @@
 print('Задача 10. Яма ')
 
-
 # В одной компьютерной текстовой игре рисуются всяческие элементы ландшафта.
 #
 # Напишите программу,
@@ -15,5 +14,12 @@ print('Задача 10. Яма ')
 # 5432112345
 
 n = int(input('Введите число: '))
-for step in range(n):
-    pass
+for line in range(n):
+    step = n - line
+    for left_number in range(n, step - 1, -1):
+        print(left_number, end='')
+    point = 2 * (step - 1)
+    print('.' * point, end='')
+    for right_number in range(step, n + 1):
+        print(right_number, end='')
+    print()
