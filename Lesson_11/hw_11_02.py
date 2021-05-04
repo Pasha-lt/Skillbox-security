@@ -1,3 +1,5 @@
+import math
+
 print('Задача 2. Грубая математика')
 
 # В одном аналитическом центре,
@@ -26,3 +28,14 @@ print('Задача 2. Грубая математика')
 #
 # Введите число: -5.9
 # x = -6   exp(x) = 0.0024787521766663585
+how_much = int(input('Введите кол-во чисел: '))
+
+for step in range(how_much):
+    n = float(input("Введите число: "))
+
+    if n >= 0:
+        n = math.ceil(n)
+        print(math.log(n))
+    elif n < 0:
+        n = math.floor(n)
+        print(math.exp(n))

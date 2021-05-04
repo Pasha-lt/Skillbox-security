@@ -1,3 +1,5 @@
+import math
+
 print('Задача 3. Убийца Steam')
 
 # Вы пишете программу-инсталлятор для компьютерной игры.
@@ -28,3 +30,13 @@ print('Задача 3. Убийца Steam')
 # Прошло 3 сек. Скачано 81 из 123 Мб (66%)
 # Прошло 4 сек. Скачано 108 из 123 Мб (88%)
 # Прошло 5 сек. Скачано 123 из 123 Мб (100%)
+
+size_file = int(input('Укажите размер файла для скачивания: '))
+setup_speed = int(input('Какова скорость вашего соединения? '))
+all_time = math.ceil(size_file / setup_speed)
+for second_count in range(1, all_time + 1):
+    done = setup_speed * second_count
+    if done > size_file:
+        done = size_file
+    print(f'Прошло {second_count} сек. Скачано {done} из {size_file} Мб ({math.ceil(done / size_file * 100)})%')
+print(f'Загрузка заняла {all_time} секунд')
