@@ -1,3 +1,5 @@
+import math
+
 print('Задача 6. Метеостанция')
 
 # Для удобства работы сотрудников международной метеостанции
@@ -31,3 +33,17 @@ print('Задача 6. Метеостанция')
 # 20       68
 # 40       104
 # 50       122
+
+lower_step = int(input('Нижняя граница: '))
+upper_step = int(input('Верхняя граница: '))
+step = int(input('Шаг: '))
+
+for temperature_step in range(math.ceil(upper_step / step) + 1):
+    temperature_now = lower_step + step * temperature_step
+    temperature_с = int(temperature_now * 1.8 + 32)
+    if temperature_now == 0:
+        print(f'0{" " * 11}32')
+    elif temperature_now > upper_step:
+        print(f'{upper_step}{" " * 10}{int(upper_step * 1.8 + 32)}')
+    else:
+        print(f'{temperature_now}{" " * 10}{int(temperature_now * 1.8 + 32)}')
