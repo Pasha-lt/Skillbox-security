@@ -26,7 +26,7 @@ y_new_coord = int(float(input()) * 10)
 y = abs(y_coord - y_new_coord)
 x = abs(x_coord - x_new_coord)
 print(f'Конь в клетке {x_coord, y_coord}. Точка в клетке {x_new_coord, y_new_coord}')
-if (abs(x) == 2 or abs(y) == 2) and (abs(x) == 1 or abs(y)) == 1:
+if (abs(x) == 2 or abs(y) == 2) and (abs(x) == 1 or abs(y) == 1):
     print('Да, конь может ходить в эту точку.')
 else:
     print('Нет, конь не может ходить в эту точку.')
