@@ -23,16 +23,19 @@ print('Задача 1. Урок информатики 2')
 # Формат плавающей точки: x = 1.2 * 10 ** -3
 
 
-order = 0
-number_entered = result = float(input('Введите число:'))
-if number_entered >= 10:
-    while number_entered >= 10:
-        order += 1
-        number_entered //= 10
-    result /= (10 ** order)
-elif 0 < number_entered < 1:
-    while number_entered < 1:
-        order -= 1
-        number_entered *= 10
-    result /= (10 ** order)
-print('Формат плавающей точки: х =', result, '* 10 **', order)
+def float_result(number, result):
+    order = 0
+    if number>= 10:
+        while number>= 10:
+            order += 1
+            number//= 10
+        result /= (10 ** order)
+    elif 0 < number< 1:
+        while number< 1:
+            order -= 1
+            number*= 10
+        result /= (10 ** order)
+    return f"Формат плавающей точки: х = {result}, '* 10 **', {order}"
+
+number= result = float(input('Введите число:'))
+print(float_result(number, result))
