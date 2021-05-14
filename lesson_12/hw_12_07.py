@@ -15,4 +15,4 @@ print('Задача 7. Опять?')
 a = int(input('Введите первое число: '))
 b = int(input('Введите второе число: '))
 min_numer = (a + b - abs(a - b)) / 2
-print(f'Наибольшее число: {int(min_numer)}')
+print(f'Наименьшее число: {int(min_numer)}')
