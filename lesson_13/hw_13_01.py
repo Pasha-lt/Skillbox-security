@@ -35,7 +35,7 @@ def float_result(number, result):
             order -= 1
             number*= 10
         result /= (10 ** order)
-    return f"Формат плавающей точки: х = {result}, '* 10 **', {order}"
+    return f"Формат плавающей точки: х = {result} * 10 ** {order}"
 
 number= result = float(input('Введите число:'))
 print(float_result(number, result))
