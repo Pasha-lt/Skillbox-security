@@ -1,5 +1,6 @@
 print('Задача 1. Урок информатики 2')
 
+
 # В прошлый раз учитель написал программу,
 # которая выводит числа в формате плавающей точки, однако он вспомнил,
 # что не учёл одну важную штуку: числа-то могут идти от нуля.
@@ -25,17 +26,18 @@ print('Задача 1. Урок информатики 2')
 
 def float_result(number, result):
     order = 0
-    if number>= 10:
-        while number>= 10:
+    if number >= 10:
+        while number >= 10:
             order += 1
-            number//= 10
+            number //= 10
         result /= (10 ** order)
-    elif 0 < number< 1:
-        while number< 1:
+    elif 0 < number < 1:
+        while number < 1:
             order -= 1
-            number*= 10
+            number *= 10
         result /= (10 ** order)
     return f"Формат плавающей точки: х = {result} * 10 ** {order}"
 
-number= result = float(input('Введите число:'))
+
+number = result = float(input('Введите число:'))
 print(float_result(number, result))

@@ -17,17 +17,26 @@ print('Задача 4. Урок информатики 3')
 
 def expo_number_f(expo_number):
     order = 0
-    if float(expo_number)>=10:
+    if float(expo_number) >= 10:
         for numeral in expo_number:
             if numeral == '0':
                 order += 1
             elif numeral == '.':
                 break
+        expo_number = float(expo_number) / (10 ** order)
+
     elif 0 < float(expo_number) < 1:
-        #todo
-        pass
-    return f'Мантиса: {float(float(expo_number) / (10 ** order))}\nПорядок: {order}'
+        for numeral in expo_number:
+            if numeral != '0' and numeral != '.':
+                break
+            else:
+                order += 1
+        expo_number = '0.' + expo_number[order:]
+        order = (order - 1) * -1
+        expo_number = float(expo_number) * 10
+
+    return f'Мантиса: {expo_number}\nПорядок: {order}'
 
 
-expo_number = input('Введите экспоненциальная форма числа')
+expo_number = input('Введите экспоненциальная форма числа: ')
 print(expo_number_f(expo_number))
