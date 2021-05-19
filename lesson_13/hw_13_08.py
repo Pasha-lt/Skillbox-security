@@ -1,5 +1,6 @@
 print('Задача 8. Яйца')
 
+
 # В рамках программы колонизации Марса
 # компания «Спейс Инжиниринг» вывела особую породу черепах,
 # которые, по задумке, должны размножаться, откладывая яйца в марсианском грунте.
@@ -30,24 +31,27 @@ print('Задача 8. Яйца')
 #
 # Приблизительная глубина безопасной кладки: 0.732421875 м
 
-
-from_d = 0
-to_d = 4
-
-max_danger = float(input('Введите максимально допустимый уровень опасности: '))
-depth = from_d + (to_d - from_d) / 2
-danger = depth ** 3 - 3 * depth ** 2 - 12 * depth + 10
-
-if max_danger < 0:
-    print('Ошибка, неправильно введены параметры.')  # будет если минус ввести
-else:
-    print(f'Глубина: {depth}, уровень опасности {danger}')
+def foo(max_danger, from_d=0, to_d=4):
+    danger, depth = bar(from_d=0, to_d=4)
     while abs(danger) > max_danger:
         if danger > 0:
             from_d = depth
         else:
             to_d = depth
-        depth = from_d + (to_d - from_d) / 2
-        danger = depth ** 3 - 3 * depth ** 2 - 12 * depth + 10
-        print(f'Глубина: {depth}, уровень опасности {danger}')
-    print(f'Приблизительная глубина безопасной кладки: {depth} м.')
+        danger, depth = bar(to_d, from_d)
+
+    return (f'Приблизительная глубина безопасной кладки: {depth} м.')
+
+
+def bar(from_d, to_d):
+    depth = from_d + (to_d - from_d) / 2
+    danger = depth ** 3 - 3 * depth ** 2 - 12 * depth + 10
+    return danger, depth
+
+
+while True:
+    max_danger = float(input('Введите максимально допустимый уровень опасности: '))
+    if max_danger < 0:
+        print('Ошибка, неправильно введены параметры.')  # будет если минус ввести
+    else:
+        print(foo(max_danger))
