@@ -52,6 +52,6 @@ def bar(from_d, to_d):
 while True:
     max_danger = float(input('Введите максимально допустимый уровень опасности: '))
     if max_danger < 0:
-        print('Ошибка, неправильно введены параметры.')  # будет если минус ввести
+        print('Ошибка, неправильно введены параметры.')
     else:
         print(foo(max_danger))
