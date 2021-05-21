@@ -11,15 +11,19 @@ print('Задача 5. Число Эйлера')
 
 from math import factorial
 
+
+def foo(precision):
+    i = 0
+    result = 0
+    addMember = 1
+
+    while addMember > precision:
+        addMember = 1 / factorial(i)
+        i += 1
+        result += addMember
+
+    return (f'Результат: {result}')
+
+
 precision = float(input('Точность: '))
-
-i = 0
-result = 0
-addMember = 1
-
-while addMember > precision:
-    addMember = 1 / factorial(i)
-    i += 1
-    result += addMember
-
-print(f'Результат: {result}')
+print(foo(precision))
