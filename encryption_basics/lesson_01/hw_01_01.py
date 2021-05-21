@@ -34,7 +34,7 @@ slide_order = most_popular_alpha - alphabet_list.index(
 decode_string = ''
 for i in encription_string.lower():
     if i == ' ':
-        decode_string += '_'  # меняем пробелы на нижнее подчеркивание
+        decode_string += ' '  # меняем пробелы на нижнее подчеркивание
     elif alphabet_list.index(i) < slide_order:  # Если индекс буквы в алфавите меньше 13 тогда добавляем 13
         decode_string += alphabet_list[alphabet_list.index(i) + slide_order]
     else:  # Если индекс буквы в алфавите больше 13 тогда минусуем 13
