@@ -40,4 +40,4 @@ for i in encription_string.lower():
     else:  # Если индекс буквы в алфавите больше 13 тогда минусуем 13
         decode_string += alphabet_list[alphabet_list.index(i) - slide_order]
 
-print(decode_string)
+print(f'{decode_string}\nШаг шрифта - {slide_order}')
