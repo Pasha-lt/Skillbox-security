@@ -23,3 +23,16 @@ print('Задача 7. Маятник ')
 # Введите амплитуду остановки: 0.1
 
 # Маятник считается остановившимся через 27 колебаний
+
+
+def foo(initial_amplitude, stop_amplitude):
+    count_pendulum = 0
+    while initial_amplitude>stop_amplitude:
+        initial_amplitude = initial_amplitude - initial_amplitude * 0.084
+        count_pendulum +=1
+    return f'Маятник считается остановившимся через {count_pendulum} колебаний'
+
+initial_amplitude = float(input("Введите начальную амплитуду: "))
+stop_amplitude = float(input("Введите амплитуду остановки: "))
+
+print(foo(initial_amplitude, stop_amplitude))
