@@ -86,18 +86,13 @@ def exponent(num, degree):
     return exponent
 
 
-def annuinity_payment(S, i, n):
-    i /= 100
-    K = (i * exponent(1 + i, n)) / (exponent(1 + i, n) - 1)
-    A = K * S
-    return round(A, 2)
-
-
 def periods(S, i, n, count):
+    i /= 100
     for period in range(1, count):
         print(f'Период: {period}')
-        A = annuinity_payment(S, i, n)
-        paidout = S * i / 100
+        A = round((i * exponent(1 + i, n)) / (exponent(1 + i, n) - 1) * S, 2)
+        print('#'*10, i)
+        paidout = S * i
         credit = A - paidout
         print(f'Остаток долга на начало периода: {S}')
         print(f'Выплачено процентов: {paidout}')
@@ -116,10 +111,10 @@ print()
 credit = periods(S, i, n, 4)
 n -= 3
 
-print(' ====================== \n')
+print('=================================================\n')
 year2 = int(input('На сколько продляется договор? '))
 n += year2
-percent2 = int(input('Увеличение ставки до: '))
+i = int(input('Увеличение ставки до: '))
 print()
 
-credit = periods(credit, percent2, n, n + 1)
+credit = periods(credit, i, n, n + 1)
