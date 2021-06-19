@@ -9,6 +9,7 @@
 # Второе число наоборот: 321.43
 # Сумма: 522.64
 
+exit()
 def foo(x):
     first_part, second_part =x.split('.')
     string = float(f'{first_part[::-1]}.{second_part[::-1]}')
