@@ -30,3 +30,4 @@ last_date = int(input('Введите последний год: '))
 years = counter_years(start_date, last_date)
 for i in years:
     print(i)
+
