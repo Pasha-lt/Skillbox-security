@@ -13,12 +13,10 @@
 
 def sort_list(number_list):
     '''Функция принимает список и возвращает сортированый список.'''
-    for i in range(0, len(number_list), 1):
-        for j in range(i, len(number_list), 1):
+    for i in range(len(number_list)):
+        for j in range(i, len(number_list)):
             if number_list[i] > number_list[j]:
-                temp = number_list[i]
-                number_list[i] = number_list[j]
-                number_list[j] = temp
+                number_list[i], number_list[j] = number_list[j], number_list[i]
     return number_list
 
 
