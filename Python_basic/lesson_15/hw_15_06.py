@@ -16,9 +16,13 @@
 
 
 def parser(user_sting):
-    '''Функция принимает строку от пользователю, преображает ее в set и возвращает его длину'''
-    list_alpha = set(user_sting)
-    return len(list_alpha)
+    '''Функция принимает строку и считает "уникальные" буквы'''
+    list_alpha = [*user_sting]
+    counter_uniqe = 0
+    for alpha in user_sting:
+        if list_alpha.count(alpha) == 1:
+            counter_uniqe += 1
+    return counter_uniqe
 
 
 if __name__ == '__main__':

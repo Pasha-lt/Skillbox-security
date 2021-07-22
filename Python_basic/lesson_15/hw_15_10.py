@@ -20,12 +20,12 @@ def sort_list(number_list):
     return number_list
 
 
-def creator():
+def user_data():
     """Функция принимает от пользователя числа и возвращает список."""
     number_list = list(map(int, input('Введите числа через пробел: ').split()))
     return number_list
 
 
 if __name__ == '__main__':
-    a = creator()
+    a = user_data()
     print(sort_list(a))

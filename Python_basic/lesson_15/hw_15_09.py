@@ -18,7 +18,7 @@
 '''
 
 
-def creator():
+def palindrome_check():
     """Функция принимает от пользователя слово делает из него список из букв,
     возвращет 'True' - если это палиндром и 'False' если нет."""
     word_list = list(input('Введите слово: '))
@@ -26,7 +26,7 @@ def creator():
 
 
 if __name__ == '__main__':
-    if creator():
+    if palindrome_check():
         print('Слово является палиндромом')
     else:
         print('Слово не является палиндромом')

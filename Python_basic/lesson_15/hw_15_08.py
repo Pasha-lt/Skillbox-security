@@ -19,19 +19,18 @@
 """
 
 
-def creator():
+def user_data():
     """Функция принимает от пользователя последовательность и шаг и возвращеет их же."""
     shift_step = int(input('Сдвиг: '))
     list_of_values = input('Введите значение через пробел: ').split()
     shift_step = len(list_of_values) - shift_step
-    return (list_of_values, shift_step)
+    return list_of_values, shift_step
 
 
 def do_shift(list_of_values, shift_step):
     """Функция принимает список и шаг отступа и возвращает последовательность с шагом."""
-
     return list_of_values[shift_step:] + list_of_values[:shift_step]
 
 
 if __name__ == '__main__':
-    print(f'Сдвинутый список: {do_shift(*creator())}')
+    print(f'Сдвинутый список: {do_shift(*user_data())}')

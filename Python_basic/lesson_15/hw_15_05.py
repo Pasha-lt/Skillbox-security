@@ -10,14 +10,14 @@
 '''
 
 
-def handler(FILMS_IN):
+def handler(films_in):
     """Функция принимает Список имеющихся фильмов спрашивает фильмы у пользователя и возвращает
      список фильмов которые есть и которые интересны пользователю."""
     my_film = []
     bool_value = True
     while bool_value:
         film = input('Введите названия фильма фильм: ')
-        if film in FILMS_IN:
+        if film in films_in:
             my_film.append(film)
             bool_value = bool(int(input('Желаете еще продолжить нажмите 1, если нет 0')))
         else:
