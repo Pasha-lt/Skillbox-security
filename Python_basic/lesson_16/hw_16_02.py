@@ -8,3 +8,22 @@
 затем объединяет их в один список и сортирует его в порядке возрастания.
 Выведите отсортированный список на экран.
 """
+
+
+def creator_pupil():
+    """This function create pupils and return two lists"""
+    first_class = [height for height in range(160, 176, 2)]
+    second_class = [height for height in range(162, 180, 3)]
+    return first_class, second_class
+
+
+def mix_and_sort_pupils(first_class, second_class):
+    """This function mix two lists and after that sort it and return sorted list"""
+    first_class.extend(second_class)
+    first_class.sort()
+    return first_class
+
+
+if __name__ == '__main__':
+    a, b = creator_pupil()
+    print(mix_and_sort_pupils(a, b))
