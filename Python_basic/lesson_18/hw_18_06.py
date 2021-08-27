@@ -16,15 +16,16 @@ def foo(user_string):
     encryption = 1
     encryption_string =''
     for number, element in enumerate(user_string):
-        # print(number)
         if number == 0:
             last_symbol = element
+        elif number == (len(user_string)-1) and (user_string[-1] != user_string[-2]):
+            encryption_string += user_string[-2] + str(encryption)
+            encryption_string += user_string[-1] + '1'
+        elif number == (len(user_string)-1) and (user_string[-1] == user_string[-2]):
+            encryption_string += user_string[-1] + str(encryption+1)
         elif element == last_symbol:
             encryption += 1
             last_symbol = element
-        elif number == (len(user_string)) and encryption > 1:
-            print(number, element)
-        #     encryption_string += last_symbol + '1'
         else:
             encryption_string += last_symbol + str(encryption)
             last_symbol = element
