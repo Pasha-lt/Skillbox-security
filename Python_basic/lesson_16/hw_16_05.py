@@ -48,8 +48,9 @@ all_time = 0
 amount_song = int(input("Сколько песен выбрать? "))
 for number in range(1, amount_song + 1):
     song_name = input(f"Название {number} песни: ")
-    for song_from_violator in violator_songs:
-        if song_from_violator[0] == song_name:
-            all_time += song_from_violator[1]
+    for title, time in violator_songs: 
+        if title == song_name:
+            all_time += time
 
 print(f"Общее время звучания песен: {round(all_time, 2)} минут")
+

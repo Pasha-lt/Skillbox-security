@@ -21,12 +21,12 @@ SHOP = [['каретка', 1200], ['шатун', 1000], ['седло', 300], ['�
 def item_counter(user_value):
     """функция подсчитывает количество элементов и общую стоимость предмета который указал юзер"""
     amount = 0
-    price = 0
-    for item in SHOP:
-        if item[0] == user_value:
+    new_price = 0
+    for name, price in SHOP: 
+        if name == user_value:
             amount += 1
-            price += item[1]
-    return amount, price
+            new_price += price
+    return amount, new_price
 
 
 def user_input():
@@ -39,3 +39,4 @@ if __name__ == '__main__':
     user_input = user_input()
     print_amount, print_price = item_counter(user_input)
     print(f"Кол-во деталей - {print_amount}\nОбщая стоимость - {print_price}")
+
