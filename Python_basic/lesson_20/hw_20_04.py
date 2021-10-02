@@ -22,7 +22,7 @@ players = {
     ("Rob", "Bobbin"): (12, 8, 2)
 }
 
-
+# first solution
 list_b = []
 for i, z in players.items():
     ltemporary_list = []
@@ -31,5 +31,8 @@ for i, z in players.items():
     for z_1 in z:
         ltemporary_list.append(z_1)
     list_b.append(tuple(ltemporary_list))
-
 print(list_b)
+
+#second solution
+new = [(name[0], name[1], score[0], score[1], score[2]) for name, score in players.items()]
+print(new)
