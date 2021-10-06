@@ -14,7 +14,7 @@
 
 
 def caeser_cipher(string, user_step):
-    cahr_list = [(alphabet[(alphabet.index(alpha) + user_step) % 33] if alpha != ' ' else ' ') for
+    cahr_list = [(alphabet[(alphabet.index(alpha) + user_step) % 26] if alpha != ' ' else ' ') for
                  alpha in string]
     new_str = ''
     for i_char in cahr_list:

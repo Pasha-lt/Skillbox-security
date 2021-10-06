@@ -10,9 +10,13 @@
 import random
 
 list_random = [random.randrange(1, 100) for i in list(range(10))]
+list_random_2 = [random.randrange(1, 100) for i in list(range(10))]
 
+finish_list = []
+finish_list_2 = []
+
+# solution 1
 temporary_list = []
-finish_list=[]
 for number, element in enumerate(list_random):
     if number % 2 != 0:
         temporary_list.append(element)
@@ -20,5 +24,11 @@ for number, element in enumerate(list_random):
         temporary_list = []
     else:
         temporary_list.append(element)
-print(finish_list)
 
+# solution 2
+while len(list_random_2) > 1:
+    finish_list_2.append((list_random_2[0], list_random_2[1]))
+    list_random_2 = list_random_2[2:]
+
+print(finish_list)
+print(finish_list_2)
