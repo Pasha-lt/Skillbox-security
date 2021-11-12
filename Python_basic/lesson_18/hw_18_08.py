@@ -21,13 +21,11 @@
 
 first_string = input('Первая строка: ')
 second_string = input('Втоаря строка: ')
-len_string = len(first_string)
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
-new_list = [abs((alphabet.index(first_string[index_i]) - alphabet.index(second_string[index_i])))
-            for index_i in range(len_string)]
 
-result = all([not (number - new_list[0]) for number in new_list])
-if result:
-    print('Первая строка получается из второй со сдвигом {}.'.format(new_list[0]))
+sep_ind = second_string.find(first_string[0])
+new = second_string[sep_ind:] + second_string[:sep_ind]
+if new == first_string:
+    print('Первая строка получается из второй со сдвигом {}.'.format(sep_ind))
 else:
     print('Первую строку нельзя получить из второй с помощью циклического сдвига.')
+
