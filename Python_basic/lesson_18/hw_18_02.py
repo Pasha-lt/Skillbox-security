@@ -6,5 +6,5 @@
 
 user_string = input('Введите свое предложение: ')
 new = user_string.split()
-new.sort(key=lambda x:len(x))
-print(new[-1])
+new.sort(key=lambda x: len(x))
+print(f'Слово - {new[-1]} его длина {len(new[-1])}')
