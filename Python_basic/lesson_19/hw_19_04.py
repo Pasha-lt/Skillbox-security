@@ -63,9 +63,10 @@ store = {
         {'quantity': 43, 'price': 97},
     ],
 }
+
 for key, value in goods.items():
     amount, count = 0, 0
-    for i in range(len(store[value])):
-        amount += store[value][i]['quantity']*store[value][i]['price']
-        count += store[value][i]['quantity']
+    for item in store[value]:
+        amount += item['quantity']*item['price']
+        count += item['quantity']
     print(f'{key} - {count} шт, стоимость {amount} руб')
