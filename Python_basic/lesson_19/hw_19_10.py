@@ -26,7 +26,6 @@ def is_polyndrom(us_string):
     
     return odd_count <= 1
 
-
-assert is_polyndrom('aab') == True
-assert is_polyndrom('aaab') == False
-assert is_polyndrom('aabbc') == True
+assert is_polyndrom('aab')
+assert not is_polyndrom('aaab')
+assert is_polyndrom('aabbc')
