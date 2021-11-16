@@ -37,38 +37,35 @@ Peter_II 2
 Peter_III 2
 '''
 
-dict_people = {}
-people_count = int(input('Введите количество человек: '))
-raw_people_list = []
-for i in range(1, (people_count)):
-    person_1, person_2 = input(f'{i} пара: ').split()
-    raw_people_list.append([person_1, person_2])
-    for j in (person_1, person_2):
-        if j in dict_people.keys():
-            dict_people[j] += 1
-        else:
-            dict_people[j] = 1
+# dict_people = {}
+# people_count = int(input('Введите количество человек: '))
+# for i in range(people_count):
+#     person_1, person_2 = input(f'{i} пара: ').split()
+#     dict_people[person_1] = person_2
 
-founder = ['test', 0]
-for key_2, val_2 in dict_people.items():
-    if val_2 > founder[1]:
-        founder = [key_2, val_2]
+dict_people = {
+    'Alexei': 'Peter_I',
+    'Anna': 'Peter_I',
+    'Elizabeth': 'Peter_I',
+    'Peter_II': 'Alexei',
+    'Peter_III': 'Anna',
+    'Paul_I': 'Peter_III',
+    'Alexander_I': 'Paul_I',
+    'Nicholaus_I': 'Paul_I',
+}
 
-print(raw_people_list)
-print(founder)
 
-family_tree = {founder[0]:0}
+def step_counter(name, hm):
+    if name in dict_people.keys():
+        hm += 1
+        step_counter(dict_people[name], hm)
+    else:
+        print(hm)
 
-family_step = 1
-while len(raw_people_list):
-    for number, pair in enumerate(raw_people_list):
-        if pair[1] in family_tree:
-            family_tree[pair[0]] = family_step
-            del raw_people_list[number]
-    family_step += 1
-
-print(family_tree)
-#todo доделать
-
-# for name, step in dict_people.items():
-#     print(name, step)
+for i in ['Alexander_I','Alexei','Anna','Elizabeth','Nicholaus_I','Paul_I','Peter_I','Peter_II','Peter_III']:
+    print(i)
+    step_counter(i, hm=0)
+    
+# for i in dict_people.keys():
+#     step_counter(dict_people[i])
+# print(dict_people)
