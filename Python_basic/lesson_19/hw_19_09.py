@@ -37,35 +37,32 @@ Peter_II 2
 Peter_III 2
 '''
 
-# dict_people = {}
-# people_count = int(input('Введите количество человек: '))
-# for i in range(people_count):
-#     person_1, person_2 = input(f'{i} пара: ').split()
-#     dict_people[person_1] = person_2
-
-dict_people = {
-    'Alexei': 'Peter_I',
-    'Anna': 'Peter_I',
-    'Elizabeth': 'Peter_I',
-    'Peter_II': 'Alexei',
-    'Peter_III': 'Anna',
-    'Paul_I': 'Peter_III',
-    'Alexander_I': 'Paul_I',
-    'Nicholaus_I': 'Paul_I',
-}
+dict_people = {}
+people_count = int(input('Введите количество человек: '))
+for i in range(people_count - 1):
+    person_1, person_2 = input(f'{i + 1} пара: ').split()
+    dict_people[person_1] = person_2
 
 
-def step_counter(name, hm):
+def step_counter(step_list, name, hm):
     if name in dict_people.keys():
         hm += 1
-        step_counter(dict_people[name], hm)
+        step_counter(step_list, dict_people[name], hm)
     else:
-        print(hm)
+        step_list.append(hm)
+        return hm
 
-for i in ['Alexander_I','Alexei','Anna','Elizabeth','Nicholaus_I','Paul_I','Peter_I','Peter_II','Peter_III']:
-    print(i)
-    step_counter(i, hm=0)
-    
-# for i in dict_people.keys():
-#     step_counter(dict_people[i])
-# print(dict_people)
+
+new_dict = {}
+step_list = []
+family = (*dict_people.keys(), *dict_people.keys())
+for i in sorted(list(set(family))):
+    new_dict[i] = None
+    step_counter(step_list, i, hm=0)
+
+n = 0
+for i in new_dict:
+    new_dict[i] = step_list[n]
+    n += 1
+
+print(new_dict)
