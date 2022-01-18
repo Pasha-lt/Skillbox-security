@@ -4,7 +4,6 @@
 до которого будет просматриваться структура. Напишите функцию,
 которая находит заданный пользователем ключ в словаре и выдаёт значение этого ключа на экран.
 По умолчанию уровень не задан. В качестве примера можно использовать такой словарь:
-
 site = {
     'html': {
         'head': {
@@ -32,19 +31,25 @@ site = {
     }
 }
 
-def req_find(site, key_u):
+
+def req_find(site, key_u, max_depth=None):
+    # Проверяем глубину рекурсии. Каждый запуск функции просто минусуем 1 (глубина рекурсии)
+    if max_depth:
+        max_depth -= 1
+    else:
+        return "На указаной глубине ничего не найдено"
+    
     if key_u in site:
         return site[key_u]
     for sub_dict in site.values():
         if isinstance(sub_dict, dict):
-            result = req_find(sub_dict, key_u)
+            result = req_find(sub_dict, key_u, max_depth)
             if result:
                 break
     else:
         result = None
     return result
 
-    
-# key_u = input('Введите ключ который хотите найти: ')
-key_u = 'head'
-print(req_find(site, key_u))
+key_u = input('Введите ключ который хотите найти: ')
+value = req_find(site, key_u, max_depth=3)
+print(value)
